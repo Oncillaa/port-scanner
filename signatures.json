@@ -1,0 +1,202 @@
+{
+  "tcp": {
+    "21": {
+      "service": "FTP",
+      "banner_regex": [
+        "220[ -].*FTP",
+        "220[ -].*FileZilla",
+        "220[ -].*vsftpd",
+        "220[ -].*ProFTPD",
+        "220[ -].*Pure-FTPd"
+      ],
+      "default_banner": "220 FTP Server Ready\r\n"
+    },
+    "22": {
+      "service": "SSH",
+      "banner_regex": [
+        "SSH-2\\.0-OpenSSH",
+        "SSH-2\\.0-dropbear",
+        "SSH-2\\.0-Go",
+        "SSH-2\\.0-libssh"
+      ],
+      "probe": null
+    },
+    "25": {
+      "service": "SMTP",
+      "banner_regex": [
+        "220[ -].*ESMTP",
+        "220[ -].*Sendmail",
+        "220[ -].*Postfix",
+        "220[ -].*Exim",
+        "220[ -].*Microsoft ESMTP"
+      ],
+      "default_banner": "EHLO scanner.local\r\n"
+    },
+    "80": {
+      "service": "HTTP",
+      "banner_regex": [],
+      "probe": "GET / HTTP/1.0\r\nHost: {target}\r\n\r\n"
+    },
+    "110": {
+      "service": "POP3",
+      "banner_regex": [
+        "\\+OK.*POP3",
+        "\\+OK.*Dovecot",
+        "\\+OK.*Courier"
+      ],
+      "default_banner": null
+    },
+    "143": {
+      "service": "IMAP",
+      "banner_regex": [
+        "\\* OK.*IMAP",
+        "\\* OK.*Dovecot",
+        "\\* OK.*Courier"
+      ],
+      "default_banner": "A001 CAPABILITY\r\n"
+    },
+    "443": {
+      "service": "HTTPS",
+      "banner_regex": [],
+      "probe": null,
+      "ssl": true
+    },
+    "445": {
+      "service": "SMB",
+      "banner_regex": [],
+      "probe": null,
+      "raw_probe": true
+    },
+    "993": {
+      "service": "IMAPS",
+      "banner_regex": [],
+      "ssl": true
+    },
+    "995": {
+      "service": "POP3S",
+      "banner_regex": [],
+      "ssl": true
+    },
+    "1433": {
+      "service": "MSSQL",
+      "banner_regex": [],
+      "probe": null,
+      "raw_probe": true
+    },
+    "1521": {
+      "service": "Oracle DB",
+      "banner_regex": [],
+      "probe": null
+    },
+    "3306": {
+      "service": "MySQL",
+      "banner_regex": [
+        ".*mysql_native_password",
+        ".*caching_sha2_password",
+        ".*MariaDB"
+      ],
+      "probe": null
+    },
+    "3389": {
+      "service": "RDP",
+      "banner_regex": [],
+      "raw_probe": true
+    },
+    "5432": {
+      "service": "PostgreSQL",
+      "banner_regex": [],
+      "probe": null
+    },
+    "5900": {
+      "service": "VNC",
+      "banner_regex": [
+        "RFB [0-9]{3}\\.[0-9]{3}"
+      ],
+      "probe": null
+    },
+    "6379": {
+      "service": "Redis",
+      "banner_regex": [],
+      "probe": "PING\r\n"
+    },
+    "8080": {
+      "service": "HTTP-Proxy",
+      "banner_regex": [],
+      "probe": "GET / HTTP/1.0\r\nHost: {target}\r\n\r\n"
+    },
+    "8443": {
+      "service": "HTTPS-Alt",
+      "banner_regex": [],
+      "ssl": true
+    },
+    "27017": {
+      "service": "MongoDB",
+      "banner_regex": [],
+      "probe": null
+    },
+    "50000": {
+      "service": "SAP",
+      "banner_regex": [],
+      "probe": null
+    }
+  },
+  "udp": {
+    "53": {
+      "service": "DNS",
+      "probe_data": "000001000000000000000000076578616d706c6503636f6d0000010001"
+    },
+    "67": {
+      "service": "DHCP Server"
+    },
+    "68": {
+      "service": "DHCP Client"
+    },
+    "69": {
+      "service": "TFTP"
+    },
+    "123": {
+      "service": "NTP"
+    },
+    "137": {
+      "service": "NetBIOS-NS"
+    },
+    "138": {
+      "service": "NetBIOS-DGM"
+    },
+    "161": {
+      "service": "SNMP",
+      "probe_data": "302902010004067075626c6963a01c0204511b2302020100020100300e300c06082b060102010101000500"
+    },
+    "162": {
+      "service": "SNMP-Trap"
+    },
+    "500": {
+      "service": "IKE"
+    },
+    "514": {
+      "service": "Syslog"
+    },
+    "520": {
+      "service": "RIP"
+    },
+    "1900": {
+      "service": "UPnP"
+    },
+    "4500": {
+      "service": "IPsec NAT-T"
+    },
+    "5353": {
+      "service": "mDNS"
+    }
+  },
+  "os_fingerprint": {
+    "ttl_windows": [ 128, 64 ],
+    "ttl_linux": [ 64, 255 ],
+    "ttl_cisco": [ 255 ],
+    "ttl_solaris": [ 255 ],
+    "ttl_freebsd": [ 64 ],
+    "tcp_window_windows": [ 65535, 64240, 8192 ],
+    "tcp_window_linux": [ 29200, 28960, 65535 ],
+    "tcp_window_cisco": [ 4128, 65535 ]
+  }
+}

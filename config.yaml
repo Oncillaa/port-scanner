@@ -1,0 +1,40 @@
+# Конфигурация сканера портов по умолчанию
+target:
+  # Может быть IP, домен или CIDR сеть
+  address: "127.0.0.1"
+  
+scan:
+  # Типы сканирования
+  tcp: true
+  udp: false
+  
+  # Порты: "1-1024", "22,80,443", "top1000"
+  ports: "top1000"
+  
+  # Производительность
+  threads: 200
+  timeout: 1.5
+  max_retries: 2
+  
+  # Опции обхода защиты
+  random_order: true
+  fragment_packets: false
+  source_port: null  # или конкретный порт
+  interface: null    # или имя интерфейса
+  
+  # Сбор информации
+  banner_grab: true
+  os_detection: true
+  service_detection: true
+
+output:
+  # Форматы вывода
+  console: true
+  json_file: "scan_result.json"
+  csv_file: "scan_result.csv"
+  html_report: false
+  
+  # Детализация
+  show_closed: false
+  show_filtered: false
+  show_banners: true
