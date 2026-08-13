@@ -1,0 +1,6 @@
+__pycache__/
+.vs/
+*.sln
+*.pyproj
+scan_*
+report_*
