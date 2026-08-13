@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # 🔍 Port Scanner
 
 Многопоточный TCP/UDP сканер портов с баннер-граббингом.
