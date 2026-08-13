@@ -64,5 +64,4 @@ python port_scanner.py
 3. Внеси изменения
 4. Создай Pull Request
 
-## 📁 Структура проекта
 
